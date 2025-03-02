@@ -181,6 +181,13 @@
                     <p>Ingredients: Salmon, olive oil, lemon, dill, garlic</p>
                     <p>Allergens: Fish</p>
                 </div>
+                <button 
+                    class="order-btn" 
+                    onclick="orderItem(event, 'Beef Tenderloin')" 
+                    style="background-color: #ff6600; color: white; font-size: 16px; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s ease; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+                    Order Now
+                </button>
+
             </div>
 
             <div class="menu-item" onclick="toggleDetails(this)">
@@ -192,6 +199,12 @@
                     <p>Ingredients: Beef tenderloin, red wine, mushrooms, thyme</p>
                     <p>Allergens: Dairy</p>
                 </div>
+                <button 
+                    class="order-btn" 
+                    onclick="orderItem(event, 'Beef Tenderloin')" 
+                    style="background-color: #ff6600; color: white; font-size: 16px; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s ease; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+                    Order Now
+                </button>
             </div>
 
             <div class="menu-item" onclick="toggleDetails(this)">
@@ -203,9 +216,27 @@
                     <p>Ingredients: Zucchini, eggplant, ricotta, tomato sauce</p>
                     <p>Allergens: Dairy, Gluten</p>
                 </div>
+                <button 
+                    class="order-btn" 
+                    onclick="orderItem(event, 'Beef Tenderloin')" 
+                    style="background-color: #ff6600; color: white; font-size: 16px; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s ease; box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+                    Order Now
+                </button>
             </div>
         </div>
     </section>
+    <script>
+        // Previous JavaScript remains same
+        
+        // New Order Function
+        function orderItem(event, itemName) {
+            event.stopPropagation(); // Prevent triggering parent click
+            const phoneNumber = '9824765952'; // Replace with country code if needed
+            const message = `I want to order: ${encodeURIComponent(itemName)}`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
 
     <!-- Footer -->
     <footer>
